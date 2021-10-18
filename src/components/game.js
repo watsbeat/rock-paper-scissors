@@ -1,26 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Game = ({ playerWeapon, setPlayerWeapon }) => {
-  // Track player's chosen weapon
+const Game = ({ setPlayerWeapon }) => {
   const setWeapon = (element) => {
-    // update player weapon state with clicked weapon
     setPlayerWeapon(element.target.dataset.id);
   };
 
   return (
-    <div>
-      <Link to="/result">
-        <button data-id="rock" onClick={setWeapon}>
-          Rock 🪨
-        </button>
-        <button data-id="paper" onClick={setWeapon}>
-          Paper 📄
-        </button>
-        <button data-id="scissors" onClick={setWeapon}>
-          Scissors ✂️
-        </button>
-      </Link>
+    <div
+      style={{
+        margin: 'auto',
+        maxWidth: '500px',
+      }}
+    >
+      <h2>Choose your weapon:</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* Must be wrapped in separate <Link> tags for styling */}
+        <Link to="/result">
+          <button data-id="rock" onClick={setWeapon}>
+            Rock 🪨
+          </button>
+        </Link>
+        <Link>
+          <button data-id="paper" onClick={setWeapon}>
+            Paper 📄
+          </button>
+        </Link>
+        <Link>
+          <button data-id="scissors" onClick={setWeapon}>
+            Scissors ✂️
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
