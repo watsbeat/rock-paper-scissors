@@ -10,6 +10,7 @@ const Game = ({ setPlayerWeapon }) => {
     <div
       style={{
         margin: 'auto',
+        width: '100vw',
         maxWidth: '500px',
       }}
     >
@@ -17,7 +18,8 @@ const Game = ({ setPlayerWeapon }) => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'space-around',
+          width: '100%',
         }}
       >
         {/* Must be wrapped in separate <Link> tags for styling */}

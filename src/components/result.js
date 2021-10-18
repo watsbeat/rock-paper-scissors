@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+// * You may use the 'beats' rules defined here in your compareHands function
 const weapons = {
   rock: {
     beats: 'scissors',

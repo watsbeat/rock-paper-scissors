@@ -11,21 +11,26 @@ function App() {
 
   return (
     <div className="App">
-      <Score score={score} />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/result">
-            <Result
-              playerWeapon={playerWeapon}
-              score={score}
-              setScore={setScore}
-            />
-          </Route>
-          <Route exact path="/">
-            <Game setPlayerWeapon={setPlayerWeapon} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <header className="App-content">
+        <h1>Rock Paper Scissors ✌️</h1>
+        <Score score={score} />
+      </header>
+      <main className="App-content">
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/result">
+              <Result
+                playerWeapon={playerWeapon}
+                score={score}
+                setScore={setScore}
+              />
+            </Route>
+            <Route exact path="/">
+              <Game setPlayerWeapon={setPlayerWeapon} />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </main>
     </div>
   );
 }
