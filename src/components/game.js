@@ -26,12 +26,12 @@ const Game = ({ setPlayerWeapon }) => {
             Rock 🪨
           </button>
         </Link>
-        <Link>
+        <Link to="/result">
           <button data-id="paper" onClick={setWeapon}>
             Paper 📄
           </button>
         </Link>
-        <Link>
+        <Link to="/result">
           <button data-id="scissors" onClick={setWeapon}>
             Scissors ✂️
           </button>

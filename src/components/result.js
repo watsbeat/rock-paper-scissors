@@ -29,8 +29,8 @@ const Result = ({ playerWeapon }) => {
       <h2>Result:</h2>
       <p>You chose {playerWeapon}!</p>
       <p>The house chose {houseWeapon}!</p>
-      {/* TODO: Compare weapons to calculate who won */}
-      {/* TODO: Update player score based on who won */}
+      {/* TODO: Compare weapons to calculate who won by creating a compareHands func - setPlayerWinStatus */}
+      {/* TODO: Update player score based on who won using setScore */}
     </>
   );
 };
