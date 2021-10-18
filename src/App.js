@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Score from './components/score';
+import Game from './components/game';
+import Result from './components/result';
 
 function App() {
+  const score = 1; // TODO: make stateful
+  const [playerWeapon, setPlayerWeapon] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Score score={score} />
+        <Switch>
+          <Route exact path="/result">
+            <Result playerWeapon={playerWeapon} />
+          </Route>
+          <Route exact path="/">
+            <Game
+              playerWeapon={playerWeapon}
+              setPlayerWeapon={setPlayerWeapon}
+            />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
