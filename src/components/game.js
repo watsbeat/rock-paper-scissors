@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 import { Link } from 'react-router-dom';
 
 const Game = ({ setPlayerWeapon }) => {
@@ -7,34 +8,22 @@ const Game = ({ setPlayerWeapon }) => {
   };
 
   return (
-    <div
-      style={{
-        margin: 'auto',
-        width: '100vw',
-        maxWidth: '500px',
-      }}
-    >
+    <div>
       <h2>Choose your weapon:</h2>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          width: '100%',
-        }}
-      >
+      <div className="Game-weapons">
         {/* Must be wrapped in separate <Link> tags for styling */}
         <Link to="/result">
-          <button data-id="rock" onClick={setWeapon}>
+          <button data-id="Rock" onClick={setWeapon}>
             Rock 🪨
           </button>
         </Link>
         <Link to="/result">
-          <button data-id="paper" onClick={setWeapon}>
+          <button data-id="Paper" onClick={setWeapon}>
             Paper 📄
           </button>
         </Link>
         <Link to="/result">
-          <button data-id="scissors" onClick={setWeapon}>
+          <button data-id="Scissors" onClick={setWeapon}>
             Scissors ✂️
           </button>
         </Link>

@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 // * You may use the 'beats' rules defined here in your compareHands function
 const weapons = {
-  rock: {
-    beats: 'scissors',
+  Rock: {
+    beats: 'Scissors',
   },
-  paper: {
-    beats: 'rock',
+  Paper: {
+    beats: 'Rock',
   },
-  scissors: {
-    beats: 'paper',
+  Scissors: {
+    beats: 'Paper',
   },
 };
 
@@ -25,14 +25,24 @@ const Result = ({ playerWeapon }) => {
     generateRandomWeaponForHouse();
   }, []);
 
+  if (!playerWeapon || !houseWeapon) {
+    return null;
+  }
+
   return (
-    <>
-      <h2>Result:</h2>
-      <p>You chose {playerWeapon}!</p>
-      <p>The house chose {houseWeapon}!</p>
+    <div className="Result-container">
+      <h2>
+        {playerWeapon} vs {houseWeapon}
+      </h2>
+      <p>
+        You chose <em>{playerWeapon.toLowerCase()}</em>!
+      </p>
+      <p>
+        The house chose <em>{houseWeapon.toLowerCase()}</em>!
+      </p>
       {/* TODO: Compare weapons to calculate who won by creating a compareHands func - setPlayerWinStatus */}
       {/* TODO: Update player score based on who won using setScore */}
-    </>
+    </div>
   );
 };
 

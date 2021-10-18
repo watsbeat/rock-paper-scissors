@@ -1,6 +1,14 @@
+:root {
+  --primary-color: #1d1e2c;
+  --secondary-color: #59656f;
+  --alternate-color: #ac9fbb;
+  --accent-color: #ddbdd5;
+  --light-color: #f7ebec;
+}
+
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: var(--primary-color);
   min-height: 100vh;
 }
 
@@ -10,14 +18,32 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--light-color);
+}
+
+.Result-container {
+  border: var(--light-color) solid 1px;
+  border-radius: 20px;
+  padding: 8px 28px;
+  margin-top: 28px;
+}
+
+.Game-weapons {
+  display: 'flex';
+  justify-content: 'space-around';
+}
+
+p {
+  color: var(--alternate-color);
 }
 
 button {
-  padding: 8px 28px;
+  color: var(--primary-color);
+  padding: 14px 34px;
+  margin: 5px;
   border-radius: 20px;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.02em;
   border: none;
@@ -28,5 +54,6 @@ button {
 }
 
 button:hover {
-  background-color: #6d58ff;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
 }
