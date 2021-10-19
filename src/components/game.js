@@ -3,8 +3,8 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 
 const Game = ({ setPlayerWeapon }) => {
-  const setWeapon = (element) => {
-    setPlayerWeapon(element.target.dataset.id);
+  const setWeapon = (e) => {
+    setPlayerWeapon(e.target.dataset.id);
   };
 
   return (
